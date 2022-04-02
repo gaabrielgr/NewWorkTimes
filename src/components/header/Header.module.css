@@ -1,0 +1,21 @@
+@import url("http://fonts.cdnfonts.com/css/ds-fette-kanzlei");
+
+.fontTitleNY {
+  font-family: "DS Fette Kanzlei", sans-serif;
+}
+
+.containerMenu {
+  display: flex;
+  height: 40px;
+  column-gap: 40px;
+  margin-right: 40px;
+  justify-content: center;
+}
+
+#title {
+  font-size: 40px;
+}
+
+a {
+  color: #000;
+}

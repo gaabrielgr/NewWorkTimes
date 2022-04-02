@@ -1,11 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import styleHeader from "./Header.module.css";
 
 const MenuItem = () => {
   return (
     <>
       <li>
-        <Link to="/technology"> Ciência & Tecnologia</Link>
+        <Link to="/technology">Tecnologia</Link>
+      </li>
+      <li>
+        <Link to="/science">Ciência</Link>
       </li>
       <li>
         <Link to="/health">Saúde</Link>
