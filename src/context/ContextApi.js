@@ -1,4 +1,5 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import api from "../api";
 export const ContextApi = createContext();
 
@@ -6,6 +7,16 @@ function ContextApiProvider({ children }) {
   const [dados, setDados] = useState([]);
   const [loading, setLoading] = useState(true);
   const [infoDetails, setInfoDetails] = useState("");
+
+  const location = useLocation()
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    if(location.pathname === '/') {
+      navigate('/nyttop')
+    }
+  },[])
+
 
   const getApi = async (categoria) => {
     try {
