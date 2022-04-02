@@ -4,9 +4,10 @@ export const ContextApi = createContext();
 
 function ContextApiProvider({ children }) {
   const [dados, setDados] = useState([]);
-  const getApi = async () => {
+
+  const getApi = async (categoria) => {
     try {
-      const { data } = await api.get();
+      const { data } = await api.get(`${categoria}.json?api-key=LK7ZHPbBRzDb2WvGKTWDDOJmkjKppZ80`);
       setDados(data.results);
     } catch (error) {
       console.log(error);

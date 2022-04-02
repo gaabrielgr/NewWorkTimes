@@ -4,10 +4,11 @@ const Home = () => {
   const { getApi, dados } = useContext(ContextApi);
 
   useEffect(() => {
-    getApi();
+    getApi('home');
     console.log(dados);
   }, []);
   console.log(dados);
+  
 
   return (
     <div>
