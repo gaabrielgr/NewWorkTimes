@@ -4,6 +4,7 @@ import ContextApiProvider from "./context/ContextApi";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/header/Header";
 import Details from "./pages/Details";
+import Technology from "./pages/Technology";
 
 function App() {
   return (
@@ -13,7 +14,8 @@ function App() {
           <Header />
           <Routes>
             <Route exact path="/nyttop" element={<Home />} />
-            <Route path="/Details" element={<Details />}>
+            <Route path="/technology" element={<Technology />} />
+            <Route path="/details" element={<Details />}>
               <Route path=":id" element={<Details />} />
             </Route>
           </Routes>

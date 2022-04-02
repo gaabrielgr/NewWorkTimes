@@ -1,11 +1,12 @@
 import React, { useContext, useEffect } from "react";
-import { ContextApi } from "../context/ContextApi";
 import { Link, useNavigate } from "react-router-dom";
-const Home = () => {
+import { ContextApi } from "../context/ContextApi";
+
+const Technology = () => {
   const navigate = useNavigate();
   const { getApi, dados, setInfoDetails } = useContext(ContextApi);
   useEffect(() => {
-    getApi("home");
+    getApi("science");
     console.log(dados);
   }, []);
 
@@ -20,10 +21,18 @@ const Home = () => {
               navigate(`/details`);
             }}
           >
-            <h2> {dado.title} </h2>
-            <img src={dado.multimedia[1].url} />
-            <h2> {dado.published_date} </h2>
-            <p> {dado.byline} </p>
+            <div>
+              <h1> {dado.title} </h1>
+              <h2> {dado.published_date} </h2>
+              <p> {dado.byline} </p>
+            </div>
+            <div>
+              {dado.multimedia === null ? (
+                ""
+              ) : (
+                <img src={dado.multimedia[1].url} />
+              )}
+            </div>
           </Link>
         </div>
       ))}
@@ -31,4 +40,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Technology;

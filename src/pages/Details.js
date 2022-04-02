@@ -1,8 +1,8 @@
-import React from 'react'
-
+import React, { useContext } from "react";
+import { useParams } from "react-router-dom";
+import { ContextApi } from "../context/ContextApi";
 export default function Details() {
-  return (
-    <div>Details</div>
-  )
+  const { infoDetails } = useContext(ContextApi);
+  console.log(infoDetails);
+  return <div>Details</div>;
 }
-
