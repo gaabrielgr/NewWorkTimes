@@ -16,8 +16,8 @@ const Home = () => {
           <Link
             to={`/details${dado.uri.split("/")[3]}`}
             onClick={() => {
+              navigate("/details");
               setInfoDetails(dado);
-              navigate(`/details`);
             }}
           >
             <h2> {dado.title} </h2>

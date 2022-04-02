@@ -16,11 +16,11 @@ function App() {
             <Route path="/science" element={<Science />} />
             <Route exact path="/nyttop" element={<Home />} />
             <Route path="/technology" element={<Technology />} />
+            <Route path="/details" element={<Details />} />
             <Route path="/details" element={<Details />}>
               <Route path=":id" element={<Details />} />
             </Route>
           </Routes>
-          <Home />
         </ContextApiProvider>
       </BrowserRouter>
     </div>
