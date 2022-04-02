@@ -1,5 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import { ContextApi } from "../context/ContextApi";
+import logo from './logo2.svg'
 const Home = () => {
   const { getApi, dados } = useContext(ContextApi);
 
@@ -10,6 +11,7 @@ const Home = () => {
 
   return (
     <div>
+      <img src={logo} alt='logo' />
       {dados.map((dado) => (
         <div key={dado.updated_date}>
           <h2> {dado.title} </h2>
