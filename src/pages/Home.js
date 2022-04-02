@@ -12,7 +12,13 @@ const Home = () => {
   return (
     <div>
       {dados.map((dado) => (
-        <h1>{dado.title}</h1>
+        <div key={dado.updated_date}> 
+          <h2> {dado.title} </h2>
+          <img src={dado.multimedia[1].url} />
+          <h2> {dado.published_date} </h2>
+          <p> {dado.byline} </p>
+
+        </div>
       ))}
     </div>
   );
