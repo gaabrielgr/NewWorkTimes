@@ -21,7 +21,12 @@ const Home = () => {
             }}
           >
             <h2> {dado.title} </h2>
-            <img src={dado.multimedia[1].url} />
+            {dado.multimedia !== null ? (
+              <img src={dado.multimedia[1].url} />
+            ) : (
+              ""
+            )}
+
             <h2> {dado.published_date} </h2>
             <p> {dado.byline} </p>
           </Link>
