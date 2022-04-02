@@ -6,7 +6,7 @@ const Technology = () => {
   const navigate = useNavigate();
   const { getApi, dados, setInfoDetails } = useContext(ContextApi);
   useEffect(() => {
-    getApi("science");
+    getApi("technology");
     console.log(dados);
   }, []);
 
@@ -15,7 +15,7 @@ const Technology = () => {
       {dados.map((dado) => (
         <div key={dado.uri}>
           <Link
-            to={`/details${dado.uri.split("/")[3]}`}
+            to={`/details/${dado.uri.split("/")[3]}`}
             onClick={() => {
               setInfoDetails(dado);
               navigate(`/details`);
@@ -27,10 +27,10 @@ const Technology = () => {
               <p> {dado.byline} </p>
             </div>
             <div>
-              {dado.multimedia === null ? (
-                ""
-              ) : (
+              {dado.multimedia !== null ? (
                 <img src={dado.multimedia[1].url} />
+              ) : (
+                ""
               )}
             </div>
           </Link>
