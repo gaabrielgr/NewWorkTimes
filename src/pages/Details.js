@@ -1,8 +1,20 @@
-import React, { useContext } from "react";
-import { useParams } from "react-router-dom";
+import React, { useContext, useEffect } from "react";
+// import { useParams } from "react-router-dom";
 import { ContextApi } from "../context/ContextApi";
 export default function Details() {
-  const { infoDetails } = useContext(ContextApi);
+  const { infoDetails, setInfoDetails,setDados } = useContext(ContextApi);
   console.log(infoDetails);
-  return <div>Details</div>;
+
+  useEffect(() => {
+    
+  })
+
+  return <div>
+    <h1>
+      {infoDetails.title}
+    </h1>
+    
+    
+    
+  </div>;
 }

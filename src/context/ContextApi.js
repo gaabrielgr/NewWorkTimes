@@ -22,7 +22,7 @@ function ContextApiProvider({ children }) {
 
 
   return (
-    <ContextApi.Provider value={{ getApi, dados, setInfoDetails, infoDetails,loading, setLoading }}>
+    <ContextApi.Provider value={{ getApi, dados, setInfoDetails, infoDetails, loading, setDados, setLoading }}>
       {children}
     </ContextApi.Provider>
   );
