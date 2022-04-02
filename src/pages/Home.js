@@ -4,17 +4,15 @@ import { Link, useNavigate } from "react-router-dom";
 import Loading from "../components/loading/Loading";
 const Home = () => {
   const navigate = useNavigate();
-  const { getApi, dados, setInfoDetails, loading} = useContext(ContextApi);
+  const { getApi, dados, setInfoDetails, loading } = useContext(ContextApi);
   useEffect(() => {
     getApi("home");
     console.log(dados);
   }, []);
 
-  if(loading) {
-    return ( <Loading /> )
+  if (loading) {
+    return <Loading />;
   }
-
-
 
   return (
     <div>
@@ -23,8 +21,8 @@ const Home = () => {
           <Link
             to={`/details/${dado.uri.split("/")[3]}`}
             onClick={() => {
+              navigate("/details");
               setInfoDetails(dado);
-              
             }}
           >
             <h2> {dado.title} </h2>

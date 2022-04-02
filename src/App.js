@@ -21,6 +21,7 @@ function App() {
             <Route exact path={"/nyttop"} element={<Home />}/> 
             <Route path="/science" element={<Science />} />
             <Route path="/technology" element={<Technology />} />
+            <Route path="/details" element={<Details />} />
             <Route path="/details" element={<Details />}>
               <Route path=":id" element={<Details />} />
             </Route>
