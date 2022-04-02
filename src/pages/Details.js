@@ -1,13 +1,15 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
+// import { useParams } from "react-router-dom";
 import { ContextApi } from "../context/ContextApi";
 export default function Details() {
-  const { infoDetails } = useContext(ContextApi);
-  const uriFormatada = infoDetails.uri.split("/")[3];
+  const { infoDetails, setInfoDetails, setDados } = useContext(ContextApi);
   console.log(infoDetails);
+
+  useEffect(() => {});
 
   return (
     <div>
-      <h1>entrou na details</h1>
+      <h1>{infoDetails.title}</h1>
     </div>
   );
 }

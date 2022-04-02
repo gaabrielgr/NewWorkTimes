@@ -1,20 +1,25 @@
 import React, { useContext, useEffect } from "react";
 import { ContextApi } from "../context/ContextApi";
 import { Link, useNavigate } from "react-router-dom";
+import Loading from "../components/loading/Loading";
 const Home = () => {
   const navigate = useNavigate();
-  const { getApi, dados, setInfoDetails } = useContext(ContextApi);
+  const { getApi, dados, setInfoDetails, loading } = useContext(ContextApi);
   useEffect(() => {
     getApi("home");
     console.log(dados);
   }, []);
+
+  if (loading) {
+    return <Loading />;
+  }
 
   return (
     <div>
       {dados.map((dado) => (
         <div key={dado.uri}>
           <Link
-            to={`/details${dado.uri.split("/")[3]}`}
+            to={`/details/${dado.uri.split("/")[3]}`}
             onClick={() => {
               navigate("/details");
               setInfoDetails(dado);
