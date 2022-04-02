@@ -1,10 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styleHeader from "./Header.module.css";
 
 const Logo = () => {
   return (
     <>
-      <h1 className={styleHeader.fontTitleNY}>The New Work Times</h1>
+      <Link to="/nyttop">
+        <h1 className={styleHeader.fontTitleNY}>The New Work Times</h1>
+      </Link>
     </>
   );
 };

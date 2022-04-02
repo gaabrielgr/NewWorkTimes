@@ -1,21 +1,40 @@
 @import url("http://fonts.cdnfonts.com/css/ds-fette-kanzlei");
 
+header {
+  margin: auto;
+  max-width: 1200px;
+}
 .fontTitleNY {
+  font-size: 50px;
   font-family: "DS Fette Kanzlei", sans-serif;
 }
+a {
+  color: #000;
+}
 
+.nav {
+  border-top: 1px solid #ebebeb;
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color: rgb(235, 235, 235);
+}
 .containerMenu {
   display: flex;
   height: 40px;
   column-gap: 40px;
-  margin-right: 40px;
   justify-content: center;
+  border-bottom: 1px solid #000;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: rgb(0, 0, 0);
+  align-items: center;
 }
 
-#title {
-  font-size: 40px;
-}
+/* TODAYS PAPER */
 
-a {
-  color: #000;
+.todaysPaper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 6px;
 }
