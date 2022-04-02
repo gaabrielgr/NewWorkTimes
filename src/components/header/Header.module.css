@@ -38,3 +38,15 @@ a {
   align-items: center;
   margin: 6px;
 }
+
+.containerData {
+  text-align: left;
+}
+.dataAtual {
+  font-weight: bold;
+  font-size: 12px;
+}
+.infoData {
+  margin: 0px;
+  font-size: 10px;
+}
