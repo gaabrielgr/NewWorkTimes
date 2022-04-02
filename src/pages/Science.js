@@ -1,17 +1,22 @@
-import React, { useContext, useEffect } from "react";
-
+import React, { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ContextApi } from "../context/ContextApi";
+import Loading from "../components/loading/Loading";
 const Science = () => {
-  const navigate = useNavigate();
 
   const { getApi, dados, setInfoDetails } = useContext(ContextApi);
+  const [loading,setLoading] = useState(true);
 
   useEffect(() => {
     getApi("science");
+    setLoading(false)
     console.log(dados);
   }, []);
   console.log(dados);
+  if(loading) {
+    return ( <Loading /> )
+  }
+
   return (<div>
     {dados.map((dado) => (
         <div key={dado.uri}>
@@ -19,7 +24,6 @@ const Science = () => {
             to={`/details/${dado.uri.split("/")[3]}`}
             onClick={() => {
               setInfoDetails(dado);
-              
             }}
           >
             <h2> {dado.title} </h2>

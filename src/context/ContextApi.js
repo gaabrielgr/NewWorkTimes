@@ -17,7 +17,6 @@ function ContextApiProvider({ children }) {
     }
   },[])
 
-
   const getApi = async (categoria) => {
     try {
       const { data } = await api.get(

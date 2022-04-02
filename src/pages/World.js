@@ -3,23 +3,23 @@ import { Link, useNavigate } from "react-router-dom";
 import { ContextApi } from "../context/ContextApi";
 import Loading from "../components/loading/Loading";
 
-const Technology = () => {
+export default function World() {
   const navigate = useNavigate();
   const { getApi, dados, setInfoDetails } = useContext(ContextApi);
-  const [loading, setLoading] = useState(true);
+  const [loading,setLoading] = useState(true);
 
-  useEffect(() => {
-    getApi("technology");
-    setLoading(false)
-    console.log(dados);
-  }, []);
+    useEffect(() => {
+        getApi("world");
+        setLoading(false)
+        console.log(dados);
+      }, []);
 
-  if(loading) {
-    return ( <Loading /> )
-  }
-
-  return <div>
-    {dados.map((dado) => (
+      if (loading) {
+        return <Loading />;
+      }
+  return (
+    <div>
+         {dados.map((dado) => (
         <div key={dado.uri}>
           <Link
             to={`/details/${dado.uri.split("/")[3]}`}
@@ -40,7 +40,6 @@ const Technology = () => {
           </Link>
         </div>
       ))}
-  </div>;
-};
-
-export default Technology;
+    </div>
+  )
+}

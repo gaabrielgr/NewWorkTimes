@@ -15,7 +15,10 @@ const MenuItem = () => {
         <Link to="/health">Saúde</Link>
       </li>
       <li>
-        <Link to="/politics">Política e Mundo</Link>
+        <Link to="/politics">Política</Link>
+      </li>
+      <li>
+        <Link to="/world">Mundo</Link>
       </li>
     </>
   );

@@ -1,31 +1,31 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
 import { ContextApi } from "../context/ContextApi";
-import Loading from "../components/loading/Loading";
+import { Link, useNavigate } from "react-router-dom";
+import Loading from '../components/loading/Loading';
 
-const Technology = () => {
-  const navigate = useNavigate();
-  const { getApi, dados, setInfoDetails } = useContext(ContextApi);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    getApi("technology");
-    setLoading(false)
-    console.log(dados);
-  }, []);
-
-  if(loading) {
-    return ( <Loading /> )
-  }
-
-  return <div>
-    {dados.map((dado) => (
+export default function Health() {
+    const navigate = useNavigate();
+    const { getApi, dados, setInfoDetails} = useContext(ContextApi);
+    const [loading,setLoading] = useState(true);
+    useEffect(() => {
+      getApi("health");
+      setLoading(false)
+    }, []);
+  
+    if (loading) {
+      return <Loading />;
+    }
+  
+    
+  return (
+    <div>
+        {dados.map((dado) => (
         <div key={dado.uri}>
           <Link
             to={`/details/${dado.uri.split("/")[3]}`}
             onClick={() => {
+              navigate("/details");
               setInfoDetails(dado);
-              
             }}
           >
             <h2> {dado.title} </h2>
@@ -40,7 +40,6 @@ const Technology = () => {
           </Link>
         </div>
       ))}
-  </div>;
-};
-
-export default Technology;
+    </div>
+  )
+}
