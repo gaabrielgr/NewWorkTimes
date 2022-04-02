@@ -9,7 +9,7 @@ function App() {
       <BrowserRouter>
       <ContextApiProvider>
         <Routes>
-
+            <Route exact path="/nyttop" element={<Home />} />
         </Routes>
         <Home />
       </ContextApiProvider>
