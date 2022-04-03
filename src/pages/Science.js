@@ -38,29 +38,38 @@ const Science = () => {
           <ItemSub link="Coronavirus OutBreak" />
         </ul>
       </div>
-      <section className={styles.containerHealth} key={noticiaPrincipal.uri.split("/")[3]}>
-        <Link
-          to={`/details/${noticiaPrincipal.uri.split("/")[3]}`}
-          onClick={() => {
-            navigate("/details");
-            setInfoDetails(noticiaPrincipal);
-          }}
-        >
-          <div className={styles.containerLinkPrincipal}>
-            <div className={styles.infoPrincipal} >
+      <section  className={styles.containerHealth} >
+          <div className={styles.containerLinkPrincipal} >
+            <div className={styles.infoPrincipal} key={noticiaPrincipal.uri.split("/")[3]}>
+            <Link
+              to={`/details/${noticiaPrincipal.uri.split("/")[3]}`}
+              onClick={() => {
+                navigate("/details");
+                setInfoDetails(noticiaPrincipal);
+              }}
+            >
               <h1>{noticiaPrincipal.title}</h1>
+            </Link>
               <p>{noticiaPrincipal.byline}</p>
               <p>{formatDate(noticiaPrincipal.published_date)}</p>
             </div>
+            <Link
+              to={`/details/${noticiaPrincipal?.uri.split("/")[3]}`}
+              onClick={() => {
+                navigate("/details");
+                setInfoDetails(noticiaPrincipal);
+              }}
+            >
+              
             <img
               width={"600px"}
               height={"400px"}
               className={styles.imagemPrincipal}
               src={noticiaPrincipal.multimedia[1].url}
               alt="noticia principal"
-            />
+              />
+              </Link>
           </div>
-        </Link>
 
         <div className={styles.containerSubSections}>
           <div className={styles.subSection}>
@@ -94,7 +103,7 @@ const Science = () => {
       <section>
         <div className={styles.divGrid}>
           {news.map((item) => (
-            <div key={item.uri.split("/")[3]}>
+            <div key={item.uri}>
               <Link
                 to={`/details/${item.uri.split("/")[3]}`}
                 onClick={() => {

@@ -51,7 +51,7 @@ const Temperature = () => {
           <img src={cloud} alt="gif de clima" />
 
           <ul>
-            <li>Temperatura atual: {weather['main']['temp']}°</li>
+            <li>Temperatura atual: {Math.round(weather['main']['temp'])}°</li>
           </ul>
           <h6>({weather['weather'][0]['description']})</h6>
         </Fragment>

@@ -65,7 +65,7 @@
 }
 
 .divGrid div {
-    border-right: 1px solid black;
+    border-right: 1px solid #ccc;
 }
 
 .divGrid p {
@@ -77,6 +77,57 @@
     display: flex;
     flex-direction: column;
     justify-content: end;
+    
 }
 
+
+
+.head {
+    width: 80%;
+    border-bottom: 1px solid #ccc;
+    border-top: 2px solid #000;
+    list-style-type: none;
+    margin: 20px auto;
+    padding: 0;
+}
+
+.head span {
+  display: flex;
+  padding: 5px 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  padding: 13px 45px 8px;
+
+}
+
+.newsBoth {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+.newsFlex {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-bottom: 1px solid #e2e2e2;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.divChild {
+  width: 350px;
+  margin: 0 auto;
+}
+
+.divChild h1 {
+  font-size: 20px;
+}
+
+.divChild h1:hover {
+  text-decoration: underline;
+}
 
