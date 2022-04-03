@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ContextApi } from "../context/ContextApi";
 import Loading from "../components/loading/Loading";
+import styles from './World.module.css'
 
 export default function World() {
   const navigate = useNavigate();
@@ -9,12 +10,31 @@ export default function World() {
 
     useEffect(() => {
         getApi("world");
+        console.log(dados);
       }, []);
+
+     const threeNews = dados.slice(0,4)
+      console.log('dsad',threeNews);
+      const diferent = dados.slice(4)
 
   return (
     <div>
-         {dados.map((dado) => (
-        <div key={dado.uri}>
+      <div className={styles.titulo}>
+      <h1>World News</h1>
+        <div className={styles.links}>
+          <a href="#">Africa</a>
+          <a href="#">Americas</a>
+          <a href="#">Asia</a>
+          <a href="#">Australia</a>
+          <a href="#">Canada</a>
+          <a href="#">Europe</a>
+          <a href="#">Middle east</a>
+        </div>
+      </div>
+      <div className={styles.divGrid}>
+
+         {threeNews.map((dado) => (
+        <div  key={dado.uri}>
           <Link
             to={`/details/${dado.uri.split("/")[3]}`}
             onClick={() => {
@@ -24,7 +44,7 @@ export default function World() {
           >
             <h2> {dado.title} </h2>
             {dado.multimedia !== null ? (
-              <img src={dado.multimedia[1].url} />
+              <img src={dado.multimedia[2].url} />
             ) : (
               ""
             )}
@@ -34,6 +54,7 @@ export default function World() {
             <p> {dado.byline} </p>
         </div>
       ))}
+      </div>
     </div>
   )
 }

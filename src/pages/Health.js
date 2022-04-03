@@ -14,6 +14,7 @@ export default function Health() {
   const newArr = dados.filter(e => e.title !== '')
   console.log(newArr);
   console.log(dados);
+  console.log(newArr[1],newArr[2],newArr[3]);
 
   return (
     <div>
@@ -29,16 +30,27 @@ export default function Health() {
             >
               {dado.multimedia !== null ? (
                 <div className={ dado === newArr[0] ? `${styles.divContainer}` : ``}>
+                  
+                  {dado.section === 'style' ? 
                     <div className={styles.containerGrid}> 
+                      <div>
+                        <h2> {dado.title}  </h2>
+                        <p> {dado.multimedia[1].caption} </p>
+                        <h2> {dado.published_date} </h2>
+                        <span> {dado.byline} </span> 
+                      </div>
+                    </div>
+                    :
+                    <div> 
                       <h2> {dado.title}  </h2>
                       <p> {dado.multimedia[1].caption} </p>
                       <h2> {dado.published_date} </h2>
                       <span> {dado.byline} </span> 
                     </div>
-                  <div>
+                  }
                   {dado === newArr[0] ? <img src={dado.multimedia[0].url} /> : <img src={dado.multimedia[1].url} />}
-                    
-                  </div>
+                 
+                 
                 </div>
               ) : ( null )}
             </Link>

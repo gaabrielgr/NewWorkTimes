@@ -38,8 +38,8 @@
     width: 800px;
 }
 
-.containerGrid:nth-child(2) div, .containerGrid:nth-child(3) div, .containerGrid:nth-child(4) div {
-    width: 80%;
-    
+.divContainer {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
 }
 
