@@ -4,6 +4,8 @@ import { Link, useNavigate } from "react-router-dom";
 import Loading from "../components/loading/Loading";
 import styles from './Health.module.css'
 import moment from "moment";
+import ItemSub from "../components/itemSub/ItemSub";
+import stylesSub from '../components/itemSub/ItemSub.module.css'
 
 export default function Politics() {
 
@@ -27,9 +29,18 @@ export default function Politics() {
         return moment(date).format("MMMM D, YYYY");
       }
 
+      
 
     return (
+      
         <div>
+          <div className={stylesSub.titulo}>
+        <h1>U.S.Politics</h1>
+        <ul className={stylesSub.links}>
+          <ItemSub link='Joe Biden' />
+          <ItemSub link='Trump Impeachment' />
+        </ul>
+      </div>
            <section className={styles.containerHealth}>
       <Link
         to={`/details/${noticiaPrincipal.uri.split("/")[3]}`}

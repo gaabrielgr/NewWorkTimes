@@ -3,6 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { ContextApi } from "../context/ContextApi";
 import styles from './Health.module.css'
 import moment from "moment";
+import ItemSub from "../components/itemSub/ItemSub";
+import stylesSub from '../components/itemSub/ItemSub.module.css'
 
 const Science = () => {
   const navigate = useNavigate();
@@ -23,7 +25,20 @@ const Science = () => {
       }
 
 
-  return (<div>
+  return (
+  <div>
+    <div className={stylesSub.titulo}>
+        <h1>Science</h1>
+        <ul className={stylesSub.links}>
+          <ItemSub link='Climate' />
+          <ItemSub link='Space & Astronomy' />
+          <ItemSub link='Health' />
+          <ItemSub link='Trilobites' />
+          <ItemSub link='Matter' />
+          <ItemSub link='Out There' />
+          <ItemSub link='Coronavirus OutBreak' />
+        </ul>
+      </div>
     <section className={styles.containerHealth}>
       <Link
         to={`/details/${noticiaPrincipal.uri.split("/")[3]}`}

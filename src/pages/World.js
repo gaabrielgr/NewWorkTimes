@@ -3,8 +3,10 @@ import { Link, useNavigate } from "react-router-dom";
 import { ContextApi } from "../context/ContextApi";
 import Loading from "../components/loading/Loading";
 import styles from './Health.module.css';
+import stylesSub from '../components/itemSub/ItemSub.module.css'
 
 import moment from "moment";
+import ItemSub from "../components/itemSub/ItemSub";
 
 export default function World() {
   const navigate = useNavigate();
@@ -27,17 +29,17 @@ export default function World() {
 
   return (
     <div>
-      <div className={styles.titulo}>
+      <div className={stylesSub.titulo}>
         <h1>World News</h1>
-        <div className={styles.links}>
-          <a href="#">Africa</a>
-          <a href="#">Americas</a>
-          <a href="#">Asia</a>
-          <a href="#">Australia</a>
-          <a href="#">Canada</a>
-          <a href="#">Europe</a>
-          <a href="#">Middle east</a>
-        </div>
+        <ul className={stylesSub.links}>
+          <ItemSub link='Africa' />
+          <ItemSub link='Americas' />
+          <ItemSub link='Asia' />
+          <ItemSub link='Australia' />
+          <ItemSub link='Canada' />
+          <ItemSub link='Europe' />
+          <ItemSub link='Middle east' />
+        </ul>
       </div>
       <section className={styles.containerHealth}>
         <Link

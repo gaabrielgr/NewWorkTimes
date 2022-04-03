@@ -1,6 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import api from "../api";
+
 export const ContextApi = createContext();
 
 function ContextApiProvider({ children }) {

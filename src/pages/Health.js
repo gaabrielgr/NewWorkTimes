@@ -4,6 +4,8 @@ import { Link, useNavigate } from "react-router-dom";
 import Loading from "../components/loading/Loading";
 import styles from "./Health.module.css";
 import moment from "moment";
+import ItemSub from "../components/itemSub/ItemSub";
+import stylesSub from '../components/itemSub/ItemSub.module.css'
 
 export default function Health() {
   const navigate = useNavigate();
@@ -22,9 +24,20 @@ export default function Health() {
     return moment(date).format("MMMM D, YYYY");
   }
   
-  
+
   return (
     <>
+    <div className={stylesSub.titulo}>
+        <h1>Health</h1>
+        <ul className={stylesSub.links}>
+          <ItemSub link='Health Policy' />
+          <ItemSub link='Global Health' />
+          <ItemSub link='The New Old Age' />
+          <ItemSub link='Science' />
+          <ItemSub link='Well' />
+          <ItemSub link='Coronavirus Outbreak' />
+        </ul>
+      </div>
     <section className={styles.containerHealth}>
       <Link
         to={`/details/${noticiaPrincipal.uri.split("/")[3]}`}

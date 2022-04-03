@@ -1,7 +1,9 @@
 import React, { useContext, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ContextApi } from "../context/ContextApi";
-import styles from './Health.module.css'
+import styles from './Health.module.css';
+import stylesSub from '../components/itemSub/ItemSub.module.css';
+import ItemSub from "../components/itemSub/ItemSub";
 import moment from "moment";
 
 const Technology = () => {
@@ -23,7 +25,23 @@ const Technology = () => {
       }
   
 
-  return <div>
+  return (
+  <div>
+    <div className={stylesSub.titulo}>
+        <h1>Technology</h1>
+        <ul className={stylesSub.links}>
+          <ItemSub link='DealBook' />
+          <ItemSub link='Markets' />
+          <ItemSub link='Economy' />
+          <ItemSub link='Energy' />
+          <ItemSub link='Media' />
+          <ItemSub link='TechNology' />
+          <ItemSub link='Personal Tech' />
+          <ItemSub link='Small Business' />
+          <ItemSub link='Your Money' />
+          <ItemSub link='Mutual fund & etfs' />
+        </ul>
+      </div>
      <section className={styles.containerHealth}>
       <Link
         to={`/details/${noticiaPrincipal.uri.split("/")[3]}`}
@@ -96,7 +114,7 @@ const Technology = () => {
        ))}
          </div>
     </section>
-  </div>;
+  </div>);
 };
 
 export default Technology;
