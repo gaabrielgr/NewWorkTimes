@@ -6,7 +6,7 @@ const Logo = () => {
   return (
     <>
       <Link to="/nyttop">
-        <h1 className={styleHeader.fontTitleNY}>The New Work Times</h1>
+        <h1 className={styleHeader.fontTitleNY}>The New York Times</h1>
       </Link>
     </>
   );

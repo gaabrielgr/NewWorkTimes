@@ -58,17 +58,24 @@ const Carousel = ({ sections }) => {
         })}
       </div>
 
-      <div className={styleCarousel.buttons}>
-        <button className={styleCarousel.buttonLeft} onClick={handleLeftClick}>
-          <img className={styleCarousel.left} src={arrow} alt="Scroll Left" />
-        </button>
-        <button
-          className={styleCarousel.buttonRight}
-          onClick={handleRightClick}
-        >
-          <img src={arrow} alt="Scroll Right" />
-        </button>
-      </div>
+      {sections.length > 4 ? (
+        <div className={styleCarousel.buttons}>
+          <button
+            className={styleCarousel.buttonLeft}
+            onClick={handleLeftClick}
+          >
+            <img className={styleCarousel.left} src={arrow} alt="Scroll Left" />
+          </button>
+          <button
+            className={styleCarousel.buttonRight}
+            onClick={handleRightClick}
+          >
+            <img src={arrow} alt="Scroll Right" />
+          </button>
+        </div>
+      ) : (
+        ""
+      )}
     </div>
   );
 };
