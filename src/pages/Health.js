@@ -51,6 +51,8 @@ export default function Health() {
               <p>{formatDate(noticiaPrincipal.published_date)}</p>
             </div>
             <img
+              width={"600px"}
+              height={"400px"}
               className={styles.imagemPrincipal}
               src={noticiaPrincipal.multimedia[1].url}
               alt=""

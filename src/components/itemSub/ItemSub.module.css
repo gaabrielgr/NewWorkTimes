@@ -1,35 +1,33 @@
 .links {
-    margin-top: 10px;
-    border-top: 1px solid #e2e2e2;
-    border-bottom: 1px solid #000;
-    padding-bottom: 3px;
-    margin-bottom: 30px;
-    display: flex;
+  margin-top: 10px;
+  border-top: 1px solid #e2e2e2;
+  border-bottom: 1px solid #000;
+  padding-bottom: 3px;
+  display: flex;
 }
 
 .links a {
-    margin-right: 12px;
-    font-weight: 400;
-    text-transform: uppercase;
-    font-size: 11px;
-    border-right: 1px solid #e2e2e2;
-    padding: .7px 9px;
-    display: flex;
-    
+  margin-right: 12px;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 11px;
+  border-right: 1px solid #e2e2e2;
+  padding: 0.7px 9px;
+  display: flex;
 }
 
 .links a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .titulo {
-    text-align: left;
-    max-width: 1200px;
-    margin: 0 auto;
+  text-align: left;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 .titulo h1 {
-    color: #121212;
-    font-size: 44px;
-    line-height: 44px;
-    margin-top: 10px;
+  color: #121212;
+  font-size: 44px;
+  line-height: 44px;
+  margin-top: 10px;
 }

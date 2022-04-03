@@ -20,6 +20,9 @@ export default function Politics() {
     return <Loading />;
   }
 
+  function formatDate(date) {
+    return moment(date).format("MMMM D, YYYY");
+  }
   const newArr = dados.filter((e) => e.title !== "");
   const subSections = newArr.slice(1, 4);
   const noticiaPrincipal = newArr[0];

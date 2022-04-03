@@ -3,8 +3,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { ContextApi } from "../context/ContextApi";
 import Loading from "../components/loading/Loading";
 import errorImg from "../imgs/errorImg.png";
-
-import styles from "./Health.module.css";
 import styles from "./Health.module.css";
 import stylesSub from "../components/itemSub/ItemSub.module.css";
 

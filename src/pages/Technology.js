@@ -3,7 +3,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { ContextApi } from "../context/ContextApi";
 import styles from "./Health.module.css";
 import errorImg from "../imgs/errorImg.png";
-import styles from "./Health.module.css";
 import stylesSub from "../components/itemSub/ItemSub.module.css";
 import ItemSub from "../components/itemSub/ItemSub";
 import moment from "moment";
@@ -16,7 +15,9 @@ const Technology = () => {
     getApi("technology");
     console.log(dados);
   }, []);
-
+  function formatDate(date) {
+    return moment(date).format("MMMM D, YYYY");
+  }
   const newArr = dados.filter((e) => e.title !== "");
   const subSections = newArr.slice(1, 4);
   const noticiaPrincipal = newArr[0];
@@ -54,6 +55,8 @@ const Technology = () => {
               <p>{formatDate(noticiaPrincipal.published_date)}</p>
             </div>
             <img
+              width={"600px"}
+              height={"400px"}
               className={styles.imagemPrincipal}
               src={noticiaPrincipal.multimedia[1].url}
               alt=""
