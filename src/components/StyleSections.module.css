@@ -1,0 +1,12 @@
+.sectionMain {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 50px;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.titleSection {
+  margin-top: 20px;
+}

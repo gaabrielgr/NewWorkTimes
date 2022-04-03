@@ -3,6 +3,7 @@ import { ContextApi } from "../context/ContextApi";
 import styles from './Details.module.css'
 import moment from 'moment';
 import { useNavigate } from "react-router-dom";
+
 export default function Details() {
   const { infoDetails } = useContext(ContextApi);
   const [data,setData] = useState({})
@@ -10,7 +11,7 @@ export default function Details() {
   console.log(infoDetails);
 
   function formatDate(date) {
-    return moment(date).format('MMMM D, YYYY')
+    return moment(date).format("MMMM D, YYYY");
   }
 
   useEffect(() => {
@@ -24,8 +25,8 @@ export default function Details() {
   return (
     <div className={styles.details}>
       <div className={styles.detailsHeader}>
-      <h1>{infoDetails.title}</h1>
-      <p> {infoDetails.abstract} </p>
+        <h1>{infoDetails.title}</h1>
+        <p> {infoDetails.abstract} </p>
       </div>
       <div>
       {infoDetails.multimedia !== null ? (

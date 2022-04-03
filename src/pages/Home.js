@@ -1,10 +1,10 @@
 import React, { useContext, useEffect } from "react";
 import { ContextApi } from "../context/ContextApi";
-import { Link, useNavigate } from "react-router-dom";
 import Loading from "../components/loading/Loading";
+import style from "../components/StyleSections.module.css";
+import Carousel from "../components/Carousel";
 const Home = () => {
-  const navigate = useNavigate();
-  const { getApi, dados, setInfoDetails, loading } = useContext(ContextApi);
+  const { getApi, dados, loading } = useContext(ContextApi);
   useEffect(() => {
     getApi("home");
     console.log(dados);
@@ -14,30 +14,26 @@ const Home = () => {
     return <Loading />;
   }
 
+  function itemsCarousel(sectionName) {
+    return dados.filter((dado) => dado.section.includes(sectionName));
+  }
 
   return (
-    <div>
-      {dados.map((dado) => (
-        <div key={dado.uri}>
-          <Link
-            to={`/details/${dado.uri.split("/")[3]}`}
-            onClick={() => {
-              navigate("/details");
-              setInfoDetails(dado);
-            }}
-          >
-            <h2> {dado.title} </h2>
-            {dado.multimedia !== null ? (
-              <img src={dado.multimedia[1].url} />
-            ) : (
-              ""
-            )}
+    <div className={style.sectionMain}>
+      <h1 className={style.titleSection}>World News</h1>
+      <Carousel sections={itemsCarousel("world")} />
 
-            <h2> {dado.published_date} </h2>
-            <p> {dado.byline} </p>
-          </Link>
-        </div>
-      ))}
+      <h1 className={style.titleSection}>Business News</h1>
+      <Carousel sections={itemsCarousel("business")} />
+
+      <h1 className={style.titleSection}>US News</h1>
+      <Carousel sections={itemsCarousel("us")} />
+
+      <h1 className={style.titleSection}>Well News</h1>
+      <Carousel sections={itemsCarousel("well")} />
+
+      <h1 className={style.titleSection}>Opinion News</h1>
+      <Carousel sections={itemsCarousel("opinion")} />
     </div>
   );
 };

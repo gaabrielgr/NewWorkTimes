@@ -7,15 +7,14 @@ function ContextApiProvider({ children }) {
   const [dados, setDados] = useState([]);
   const [loading, setLoading] = useState(true);
   const [infoDetails, setInfoDetails] = useState("");
-
-  const location = useLocation()
-  const navigate = useNavigate()
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
-    if(location.pathname === '/') {
-      navigate('/nyttop')
+    if (location.pathname === "/") {
+      navigate("/nyttop");
     }
-  },[])
+  }, []);
 
   const getApi = async (categoria) => {
     try {
@@ -25,15 +24,23 @@ function ContextApiProvider({ children }) {
       setDados(data.results);
       setLoading(false);
     } catch (error) {
-      setLoading(false)
+      setLoading(false);
       console.log(error);
     }
   };
 
-
-
   return (
-    <ContextApi.Provider value={{ getApi, dados, setInfoDetails, infoDetails, loading, setDados }}>
+    <ContextApi.Provider
+      value={{
+        getApi,
+        dados,
+        setInfoDetails,
+        infoDetails,
+        loading,
+        setDados,
+        setLoading,
+      }}
+    >
       {children}
     </ContextApi.Provider>
   );
