@@ -1,45 +1,114 @@
-.divContainer * {
-    font-family: nyt-cheltenham,georgia,'times new roman',times,serif;
-    box-sizing: border-box;
+/* NOTICIA PRINCIPAL */
+.containerHealth {
+  max-width: 1200px;
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 
-.divContainer:nth-child(1)  {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 10px;
+.infoPrincipal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.containerLinkPrincipal {
+  padding: 40px 0px;
+  display: flex;
+  column-gap: 120px;
+  border-bottom: 1px solid black;
+}
+
+/* SUBSCETIONS */
+
+.containerSubSections {
+  display: flex;
+  align-items: center;
+  padding: 20px 0px;
+  flex-wrap: wrap;
+}
+
+.subSection {
+  display: flex;
+  align-items: center;
+  
+}
+
+
+
+.subSection h1 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.subSectionLargura {
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  height: 300px;
+  width: 33.33%;
+}
+
+.subSectionLargura:last-child {
+  border-right: 0px;
+}
+
+.divGrid {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20%;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1200px;
+    box-sizing: border-box;
+    margin: 0 auto;
     
 }
-.divContainer:nth-child(1) div {
-    width: 90%;
-    margin: 0px 10px;
+
+.divGrid div {
+    border-right: 1px solid black;
 }
 
-.divContainer:nth-child(1) p {
-   width: 60ch;
-   font-size: 16px;
-   line-height: 23px;
-   text-align: justify;
-   margin-bottom: 80px;
+.divGrid p {
+    width: 20ch;
+    margin-bottom: 8px;
 }
 
-
-.divContainer:nth-child(1) h2 {
-    text-align: center;
-    font-size: 24px;
-    margin-bottom: 80px;
+.divTeste {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
 }
 
-.divContainer:nth-child(1) span {
-    margin-bottom: 40px;
+.titulo {
+    text-align: left;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.titulo h1 {
+    color: #121212;
+    font-size: 44px;
+    line-height: 44px;
+    margin-top: 10px;
 }
 
-.divContainer:nth-child(1) img {
-    width: 800px;
+.links {
+    margin-top: 10px;
+    border-top: 1px solid #e2e2e2;
+    border-bottom: 1px solid #000;
+    padding-bottom: 3px;
+    margin-bottom: 30px;
 }
 
-.divContainer {
-    display: grid;
-    grid-template-columns: auto auto auto auto;
+.links a {
+    margin-right: 12px;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 11px;
+    border-right: 1px solid #e2e2e2;
+    padding: .7px 9px;
+    
 }
 
+.links a:hover {
+    text-decoration: underline;
+}
