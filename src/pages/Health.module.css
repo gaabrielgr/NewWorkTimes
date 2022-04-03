@@ -1,45 +1,49 @@
-.divContainer * {
-    font-family: nyt-cheltenham,georgia,'times new roman',times,serif;
-    box-sizing: border-box;
+/* NOTICIA PRINCIPAL */
+.containerHealth {
+  max-width: 1200px;
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.containerPrincipal {
+}
+.infoPrincipal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.containerLinkPrincipal {
+  padding: 40px 0px;
+  display: flex;
+  column-gap: 120px;
+  border-bottom: 1px solid black;
 }
 
-.divContainer:nth-child(1)  {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 10px;
-    
-}
-.divContainer:nth-child(1) div {
-    width: 90%;
-    margin: 0px 10px;
+/* SUBSCETIONS */
+
+.containerSubSections {
+  display: flex;
+  align-items: center;
+  padding: 20px 0px;
+  flex-wrap: wrap;
 }
 
-.divContainer:nth-child(1) p {
-   width: 60ch;
-   font-size: 16px;
-   line-height: 23px;
-   text-align: justify;
-   margin-bottom: 80px;
+.subSection {
+  display: flex;
+  align-items: flex-start;
 }
 
-
-.divContainer:nth-child(1) h2 {
-    text-align: center;
-    font-size: 24px;
-    margin-bottom: 80px;
+.subSection h1 {
+  margin-bottom: 10px;
 }
-
-.divContainer:nth-child(1) span {
-    margin-bottom: 40px;
+.subSectionLargura {
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  height: 300px;
+  width: 33.33%;
 }
-
-.divContainer:nth-child(1) img {
-    width: 800px;
+.subSectionLargura:last-child {
+  border-right: 0px;
 }
-
-.containerGrid:nth-child(2) div, .containerGrid:nth-child(3) div, .containerGrid:nth-child(4) div {
-    width: 80%;
-    
-}
-
