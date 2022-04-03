@@ -1,0 +1,45 @@
+.divContainer * {
+    font-family: nyt-cheltenham,georgia,'times new roman',times,serif;
+    box-sizing: border-box;
+}
+
+.divContainer:nth-child(1)  {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 10px;
+    
+}
+.divContainer:nth-child(1) div {
+    width: 90%;
+    margin: 0px 10px;
+}
+
+.divContainer:nth-child(1) p {
+   width: 60ch;
+   font-size: 16px;
+   line-height: 23px;
+   text-align: justify;
+   margin-bottom: 80px;
+}
+
+
+.divContainer:nth-child(1) h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 80px;
+}
+
+.divContainer:nth-child(1) span {
+    margin-bottom: 40px;
+}
+
+.divContainer:nth-child(1) img {
+    width: 800px;
+}
+
+.containerGrid:nth-child(2) div, .containerGrid:nth-child(3) div, .containerGrid:nth-child(4) div {
+    width: 80%;
+    
+}
+

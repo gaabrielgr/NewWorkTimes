@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import { ContextApi } from "../context/ContextApi";
 import { Link, useNavigate } from "react-router-dom";
 import Loading from "../components/loading/Loading";
@@ -7,17 +7,11 @@ export default function Politics() {
 
     const navigate = useNavigate();
     const { getApi, dados, setInfoDetails } = useContext(ContextApi);
-    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         getApi("politics");
-        setLoading(false)
-        console.log(dados);
     }, []);
 
-    if (loading) {
-        return <Loading />;
-    }
     return (
         <div>
             {dados.map((dado) => (
@@ -35,10 +29,10 @@ export default function Politics() {
                         ) : (
                             ""
                         )}
+                    </Link>
 
                         <h2> {dado.published_date} </h2>
                         <p> {dado.byline} </p>
-                    </Link>
                 </div>
             ))}
         </div>

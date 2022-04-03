@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import { ContextApi } from "../context/ContextApi";
 import { Link, useNavigate } from "react-router-dom";
 import Loading from "../components/loading/Loading";
@@ -13,6 +13,7 @@ const Home = () => {
   if (loading) {
     return <Loading />;
   }
+
 
   return (
     <div>
