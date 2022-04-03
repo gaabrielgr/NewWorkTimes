@@ -1,48 +1,45 @@
 .details * {
-    font-family: nyt-cheltenham,georgia,'times new roman',times,serif;
-    box-sizing: border-box;
+  font-family: nyt-cheltenham, georgia, "times new roman", times, serif;
+  box-sizing: border-box;
 }
 
 .detailsHeader {
-    border-bottom: 1px solid #ebebeb;
-    padding-top: 20px;
-    margin-bottom: 20px;
+  border-bottom: 1px solid #ebebeb;
+  padding-top: 20px;
+  margin-bottom: 20px;
 }
 
-
-.details  {
-    width: 600px;
-    height: 148px;
-    margin: 50px auto;
+.details {
+  width: 600px;
+  margin: 50px auto;
 }
-
 
 .details h1 {
-    margin: 0 auto;
-    text-align: left;
-    line-height: 2.6rem;
-    font-size: 2.40rem;
-    font-weight: 200;
-    margin-bottom: 0.5rem;
+  margin: 0 auto;
+  text-align: left;
+  line-height: 2.6rem;
+  font-size: 2.4rem;
+  font-weight: 200;
+  margin-bottom: 0.5rem;
 }
 
 .details p {
-    margin: 20px auto;
-    text-align: left;
-    font-size: 1.25rem;
-    line-height: 1.6rem;
-    font-weight: 300;
+  margin: 20px auto;
+  text-align: left;
+  font-size: 1.25rem;
+  line-height: 1.6rem;
+  font-weight: 300;
 }
 
-.actors h1  {
-    font-size: 0.875rem;
-    font-weight: 700;
-    color: #333;
-    line-height: 1.125rem;
-    margin: 10px auto;
+.actors h1 {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #333;
+  line-height: 1.125rem;
+  margin: 10px auto;
 }
 
 .times p {
-    font-size: 0.8125rem;
-    line-height: 1rem;
+  font-size: 0.8125rem;
+  line-height: 1rem;
 }
