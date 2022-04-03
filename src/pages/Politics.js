@@ -8,11 +8,15 @@ import moment from "moment";
 export default function Politics() {
 
     const navigate = useNavigate();
-    const { getApi, dados, setInfoDetails } = useContext(ContextApi);
+    const { getApi, dados, setInfoDetails, loading } = useContext(ContextApi);
 
     useEffect(() => {
         getApi("politics");
     }, []);
+    
+    if (loading) {
+      return <Loading />;
+    }
 
     const newArr = dados.filter((e) => e.title !== "");
       const subSections = newArr.slice(1, 4);
