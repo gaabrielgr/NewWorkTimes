@@ -9,7 +9,7 @@ import stylesSub from '../components/itemSub/ItemSub.module.css'
 
 export default function Health() {
   const navigate = useNavigate();
-  const { getApi, dados, setInfoDetails } = useContext(ContextApi);
+  const { getApi, dados, setInfoDetails, loading } = useContext(ContextApi);
   useEffect(() => {
     getApi("health");
   }, []);
@@ -22,9 +22,12 @@ export default function Health() {
 
   function formatDate(date) {
     return moment(date).format("MMMM D, YYYY");
+  }  
+
+  if(loading) {
+    return ( <Loading /> )
   }
   
-
   return (
     <>
     <div className={stylesSub.titulo}>

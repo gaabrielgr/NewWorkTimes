@@ -1,6 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import api from "../api";
+import Loading from "../components/loading/Loading";
 
 export const ContextApi = createContext();
 
@@ -25,10 +26,15 @@ function ContextApiProvider({ children }) {
       setDados(data.results);
       setLoading(false);
     } catch (error) {
-      setLoading(false);
       console.log(error);
     }
   };
+
+  if(loading) {
+    return (
+        <Loading />
+    )
+}
 
   return (
     <ContextApi.Provider
