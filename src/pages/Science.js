@@ -77,10 +77,18 @@ const Science = () => {
       <div className={styles.divGrid}>
        {news.map(item => (
          <div>
+            <Link
+                  to={`/details/${item.uri.split("/")[3]}`}
+                  onClick={() => {
+                    navigate("/details");
+                    setInfoDetails(item);
+                  }}
+                >
            <p>
            {item.title}
            </p>
            {item.multimedia !== null ? <img src={item.multimedia[2].url} /> : '' }
+                </Link>
            <p>{item.byline}</p>
            <p> {formatDate(item.published_date)} </p>
          </div>

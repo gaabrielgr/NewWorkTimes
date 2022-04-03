@@ -17,13 +17,12 @@ export default function Health() {
   const noticiaPrincipal = newArr[0];
   const news = dados.slice(5)
   
+
   function formatDate(date) {
     return moment(date).format("MMMM D, YYYY");
   }
-  console.log(dados);
-  console.log(newArr[1],newArr[2],newArr[3]);
   
-  console.log('das',news);
+  
   return (
     <>
     <section className={styles.containerHealth}>
@@ -79,10 +78,18 @@ export default function Health() {
       <div className={styles.divGrid}>
        {news.map(item => (
          <div>
+           <Link
+                  to={`/details/${item.uri.split("/")[3]}`}
+                  onClick={() => {
+                    navigate("/details");
+                    setInfoDetails(item);
+                  }}
+                >
            <p>
            {item.title}
            </p>
            {item.multimedia !== null ? <img src={item.multimedia[2].url} /> : '' }
+                </Link>
            <p>{item.byline}</p>
            <p> {formatDate(item.published_date)} </p>
          </div>
