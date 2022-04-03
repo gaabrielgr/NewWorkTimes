@@ -5,6 +5,8 @@ import Loading from "../components/loading/Loading";
 import errorImg from "../imgs/errorImg.png";
 import styles from "./Health.module.css";
 import moment from "moment";
+import ItemSub from "../components/itemSub/ItemSub";
+import stylesSub from "../components/itemSub/ItemSub.module.css";
 
 export default function Politics() {
   const navigate = useNavigate();
@@ -23,12 +25,15 @@ export default function Politics() {
   const noticiaPrincipal = newArr[0];
   const news = dados.slice(5);
 
-  function formatDate(date) {
-    return moment(date).format("MMMM D, YYYY");
-  }
-
   return (
     <div>
+      <div className={stylesSub.titulo}>
+        <h1>U.S.Politics</h1>
+        <ul className={stylesSub.links}>
+          <ItemSub link="Joe Biden" />
+          <ItemSub link="Trump Impeachment" />
+        </ul>
+      </div>
       <section className={styles.containerHealth}>
         <Link
           to={`/details/${noticiaPrincipal.uri.split("/")[3]}`}
@@ -47,8 +52,6 @@ export default function Politics() {
               className={styles.imagemPrincipal}
               src={noticiaPrincipal.multimedia[1].url}
               alt=""
-              width={"600px"}
-              height={"400px"}
             />
           </div>
         </Link>

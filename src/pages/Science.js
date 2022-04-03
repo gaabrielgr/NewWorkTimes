@@ -4,6 +4,8 @@ import { ContextApi } from "../context/ContextApi";
 import styles from "./Health.module.css";
 import errorImg from "../imgs/errorImg.png";
 import moment from "moment";
+import ItemSub from "../components/itemSub/ItemSub";
+import stylesSub from "../components/itemSub/ItemSub.module.css";
 
 const Science = () => {
   const navigate = useNavigate();
@@ -24,6 +26,18 @@ const Science = () => {
 
   return (
     <div>
+      <div className={stylesSub.titulo}>
+        <h1>Science</h1>
+        <ul className={stylesSub.links}>
+          <ItemSub link="Climate" />
+          <ItemSub link="Space & Astronomy" />
+          <ItemSub link="Health" />
+          <ItemSub link="Trilobites" />
+          <ItemSub link="Matter" />
+          <ItemSub link="Out There" />
+          <ItemSub link="Coronavirus OutBreak" />
+        </ul>
+      </div>
       <section className={styles.containerHealth}>
         <Link
           to={`/details/${noticiaPrincipal.uri.split("/")[3]}`}
@@ -39,8 +53,6 @@ const Science = () => {
               <p>{formatDate(noticiaPrincipal.published_date)}</p>
             </div>
             <img
-              width={"600px"}
-              height={"400px"}
               className={styles.imagemPrincipal}
               src={noticiaPrincipal.multimedia[1].url}
               alt=""

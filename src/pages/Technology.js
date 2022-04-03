@@ -3,6 +3,9 @@ import { Link, useNavigate } from "react-router-dom";
 import { ContextApi } from "../context/ContextApi";
 import styles from "./Health.module.css";
 import errorImg from "../imgs/errorImg.png";
+import styles from "./Health.module.css";
+import stylesSub from "../components/itemSub/ItemSub.module.css";
+import ItemSub from "../components/itemSub/ItemSub";
 import moment from "moment";
 
 const Technology = () => {
@@ -19,12 +22,23 @@ const Technology = () => {
   const noticiaPrincipal = newArr[0];
   const news = dados.slice(5);
 
-  function formatDate(date) {
-    return moment(date).format("MMMM D, YYYY");
-  }
-
   return (
     <div>
+      <div className={stylesSub.titulo}>
+        <h1>Technology</h1>
+        <ul className={stylesSub.links}>
+          <ItemSub link="DealBook" />
+          <ItemSub link="Markets" />
+          <ItemSub link="Economy" />
+          <ItemSub link="Energy" />
+          <ItemSub link="Media" />
+          <ItemSub link="TechNology" />
+          <ItemSub link="Personal Tech" />
+          <ItemSub link="Small Business" />
+          <ItemSub link="Your Money" />
+          <ItemSub link="Mutual fund & etfs" />
+        </ul>
+      </div>
       <section className={styles.containerHealth}>
         <Link
           to={`/details/${noticiaPrincipal.uri.split("/")[3]}`}
@@ -43,8 +57,6 @@ const Technology = () => {
               className={styles.imagemPrincipal}
               src={noticiaPrincipal.multimedia[1].url}
               alt=""
-              width={"600px"}
-              height={"400px"}
             />
           </div>
         </Link>
