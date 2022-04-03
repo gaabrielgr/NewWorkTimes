@@ -6,19 +6,19 @@ const MenuItem = () => {
   return (
     <>
       <li>
-        <Link to="/technology">Tecnologia</Link>
+        <Link to="/technology">Technology</Link>
       </li>
       <li>
-        <Link to="/science">Ciência</Link>
+        <Link to="/science">Science</Link>
       </li>
       <li>
-        <Link to="/health">Saúde</Link>
+        <Link to="/health">Health</Link>
       </li>
       <li>
-        <Link to="/politics">Política</Link>
+        <Link to="/politics">Politics</Link>
       </li>
       <li>
-        <Link to="/world">Mundo</Link>
+        <Link to="/world">World</Link>
       </li>
     </>
   );
