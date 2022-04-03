@@ -1,0 +1,14 @@
+.footer {
+  width: 1200px;
+  margin: 0 auto;
+  border-top: 1px solid #ebebeb;
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color: rgb(235, 235, 235);
+  align-items: center;
+  padding-right: 40px;
+}
+
+.footer nav {
+  border: none;
+}
