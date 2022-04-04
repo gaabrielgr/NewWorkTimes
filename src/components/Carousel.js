@@ -1,12 +1,11 @@
 import React, { useContext } from "react";
 import { useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import moment from "moment";
 import styleCarousel from "./Carousel.module.css";
 import arrow from "../imgs/arrow.png";
 import { ContextApi } from "../context/ContextApi";
 const Carousel = ({ sections }) => {
-  const { setInfoDetails } = useContext(ContextApi);
+  const { setInfoDetails, formatDate } = useContext(ContextApi);
   const carousel = useRef(null);
   const navigate = useNavigate();
 
@@ -20,9 +19,6 @@ const Carousel = ({ sections }) => {
 
     carousel.current.scrollLeft += carousel.current.offsetWidth;
   };
-  function formatDate(date) {
-    return moment(date).format("MMMM D, YYYY");
-  }
 
   return (
     <div className={styleCarousel.container}>
