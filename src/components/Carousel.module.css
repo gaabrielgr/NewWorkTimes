@@ -48,25 +48,10 @@
   padding: 5px;
   border-radius: 10px;
 }
-
-.container .carousel .item .info .name {
-  font-size: 1.2rem;
+.date {
   font-weight: bold;
-  color: #000;
+  font-size: 12px;
 }
-
-.container .carousel .item .info .oldPrice {
-  font-size: 0.8rem;
-  text-decoration: line-through;
-  flex-grow: 1;
-}
-
-.container .carousel .item .info .price {
-  font-size: 1.2rem;
-  font-weight: bold;
-  font-size: 10px;
-}
-
 .container .buttons {
   width: 100%;
   text-align: center;

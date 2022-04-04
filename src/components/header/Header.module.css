@@ -29,7 +29,10 @@ a {
   border-bottom-color: rgb(0, 0, 0);
   align-items: center;
 }
-
+.containerMenu li:hover {
+  font-weight: 600;
+  text-decoration: underline;
+}
 /* TODAYS PAPER */
 
 .todaysPaper {

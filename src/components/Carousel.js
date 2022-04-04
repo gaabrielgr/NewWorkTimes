@@ -49,7 +49,7 @@ const Carousel = ({ sections }) => {
 
               <div className={styleCarousel.info}>
                 <span className={styleCarousel.name}>{item.title}</span>
-                <span className={styleCarousel.price}>
+                <span className={styleCarousel.date}>
                   {formatDate(item.published_date)}
                 </span>
               </div>

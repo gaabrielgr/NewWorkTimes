@@ -12,3 +12,6 @@
 .footer nav {
   border: none;
 }
+.footer ul {
+  border-bottom: 0px;
+}
