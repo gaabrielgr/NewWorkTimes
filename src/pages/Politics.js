@@ -8,7 +8,6 @@ import moment from "moment";
 import ItemSub from "../components/itemSub/ItemSub";
 import stylesSub from "../components/itemSub/ItemSub.module.css";
 
-
 export default function Politics() {
   const navigate = useNavigate();
   const { getApi, dados, setInfoDetails, loading } = useContext(ContextApi);
@@ -29,9 +28,7 @@ export default function Politics() {
   const noticiaPrincipal = newArr[0];
   const news = dados.slice(5, 13);
 
-  const newsBoth = dados.slice(13)
-
-
+  const newsBoth = dados.slice(13);
 
   return (
     <div>
@@ -42,7 +39,10 @@ export default function Politics() {
           <ItemSub link="Trump Impeachment" />
         </ul>
       </div>
-      <section className={styles.containerHealth} key={noticiaPrincipal.uri.split("/")[3]}>
+      <section
+        className={styles.containerHealth}
+        key={noticiaPrincipal.uri.split("/")[3]}
+      >
         <Link
           to={`/details/${noticiaPrincipal.uri.split("/")[3]}`}
           onClick={() => {
@@ -67,7 +67,10 @@ export default function Politics() {
         <div className={styles.containerSubSections}>
           <div className={styles.subSection}>
             {subSections.map((sub) => (
-              <div className={styles.subSectionLargura} key={sub.uri.split("/")[3]}>
+              <div
+                className={styles.subSectionLargura}
+                key={sub.uri.split("/")[3]}
+              >
                 <div className={styles.subSectionInfo}>
                   <h1>{sub.title}</h1>
                   <div className={styles.divTeste}>
@@ -79,7 +82,7 @@ export default function Politics() {
                       }}
                     >
                       {sub.multimedia !== null ? (
-                        <img width={"200px"} src={sub.multimedia[2].url} />
+                        <img width={"250px"} src={sub.multimedia[2].url} />
                       ) : (
                         ""
                       )}
@@ -120,14 +123,12 @@ export default function Politics() {
       <section>
         <div className={styles.head}>
           <div>
-            <span className={styles.teste}>
-              Latest
-            </span>
+            <span className={styles.teste}>Latest</span>
           </div>
         </div>
         <div className={styles.newBoth}>
-          {newsBoth.map(item => (
-            <div className={styles.newsFlex} key={item.uri.split('/')[3]}>
+          {newsBoth.map((item) => (
+            <div className={styles.newsFlex} key={item.uri.split("/")[3]}>
               <div className={styles.divChild}>
                 <Link
                   to={`/details/${item.uri.split("/")[3]}`}
@@ -136,9 +137,7 @@ export default function Politics() {
                     setInfoDetails(item);
                   }}
                 >
-                  <h1>
-                    {item.title}
-                  </h1>
+                  <h1>{item.title}</h1>
                 </Link>
                 <div>
                   <span> {item.byline} </span>
@@ -155,7 +154,11 @@ export default function Politics() {
                     setInfoDetails(item);
                   }}
                 >
-                  {item.multimedia != null ? <img src={item.multimedia[1].url} width={'220px'} /> : <img src={errorImg} width={'220px'} height={'146px'}></img>}
+                  {item.multimedia != null ? (
+                    <img src={item.multimedia[1].url} width={"220px"} />
+                  ) : (
+                    <img src={errorImg} width={"220px"} height={"146px"}></img>
+                  )}
                 </Link>
               </div>
             </div>

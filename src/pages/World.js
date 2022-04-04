@@ -23,14 +23,14 @@ export default function World() {
   const noticiaPrincipal = newArr[0];
   const news = dados.slice(5, 13);
 
-  const newsBoth = dados.slice(13)
+  const newsBoth = dados.slice(13);
 
   function formatDate(date) {
     return moment(date).format("MMMM D, YYYY");
   }
 
-  if(loading) {
-    return ( <Loading /> )
+  if (loading) {
+    return <Loading />;
   }
 
   return (
@@ -47,7 +47,10 @@ export default function World() {
           <ItemSub link="Middle east" />
         </ul>
       </div>
-      <section className={styles.containerHealth} key={noticiaPrincipal.uri.split("/")[3]}>
+      <section
+        className={styles.containerHealth}
+        key={noticiaPrincipal.uri.split("/")[3]}
+      >
         <Link
           to={`/details/${noticiaPrincipal.uri.split("/")[3]}`}
           onClick={() => {
@@ -55,7 +58,7 @@ export default function World() {
             setInfoDetails(noticiaPrincipal);
           }}
         >
-          <div className={styles.containerLinkPrincipal} >
+          <div className={styles.containerLinkPrincipal}>
             <div className={styles.infoPrincipal}>
               <h1>{noticiaPrincipal.title}</h1>
               <p>{noticiaPrincipal.byline}</p>
@@ -74,7 +77,10 @@ export default function World() {
         <div className={styles.containerSubSections}>
           <div className={styles.subSection}>
             {subSections.map((sub) => (
-              <div className={styles.subSectionLargura} key={sub.uri.split("/")[3]}>
+              <div
+                className={styles.subSectionLargura}
+                key={sub.uri.split("/")[3]}
+              >
                 <div className={styles.subSectionInfo}>
                   <h1>{sub.title}</h1>
                   <div className={styles.divTeste}>
@@ -86,7 +92,7 @@ export default function World() {
                       }}
                     >
                       {sub.multimedia !== null ? (
-                        <img width={"200px"} src={sub.multimedia[2].url} />
+                        <img width={"250px"} src={sub.multimedia[2].url} />
                       ) : (
                         ""
                       )}
@@ -127,14 +133,12 @@ export default function World() {
       <section>
         <div className={styles.head}>
           <div>
-            <span className={styles.teste}>
-              Latest
-            </span>
+            <span className={styles.teste}>Latest</span>
           </div>
         </div>
         <div className={styles.newBoth}>
-          {newsBoth.map(item => (
-            <div className={styles.newsFlex} key={item.uri.split('/')[3]}>
+          {newsBoth.map((item) => (
+            <div className={styles.newsFlex} key={item.uri.split("/")[3]}>
               <div className={styles.divChild}>
                 <Link
                   to={`/details/${item.uri.split("/")[3]}`}
@@ -143,9 +147,7 @@ export default function World() {
                     setInfoDetails(item);
                   }}
                 >
-                  <h1>
-                    {item.title}
-                  </h1>
+                  <h1>{item.title}</h1>
                 </Link>
                 <div>
                   <span> {item.byline} </span>
@@ -162,7 +164,11 @@ export default function World() {
                     setInfoDetails(item);
                   }}
                 >
-                  {item.multimedia != null ? <img src={item.multimedia[1].url} width={'220px'} /> : <img src={errorImg} width={'220px'} height={'146px'}></img>}
+                  {item.multimedia != null ? (
+                    <img src={item.multimedia[1].url} width={"220px"} />
+                  ) : (
+                    <img src={errorImg} width={"220px"} height={"146px"}></img>
+                  )}
                 </Link>
               </div>
             </div>
