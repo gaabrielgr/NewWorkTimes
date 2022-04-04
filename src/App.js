@@ -17,6 +17,7 @@ import Health from "./pages/Health";
 import World from "./pages/World";
 import Politics from "./pages/Politics";
 import Footer from "./components/footer/Footer";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
             <Route path="/world" element={<World />} />
             <Route path="/health" element={<Health />} />
             <Route path="/politics" element={<Politics />} />
+            <Route path="*" element={<NotFound />} />
             <Route path="/details" element={<Details />} />
             <Route path="/details" element={<Details />}>
               <Route path=":id" element={<Details />} />

@@ -32,10 +32,8 @@
 .subSection {
   display: flex;
   align-items: center;
-  
+    
 }
-
-
 
 .subSection h1 {
   font-size: 16px;
@@ -45,7 +43,7 @@
 .subSectionLargura {
   border-right: 1px solid black;
   border-bottom: 1px solid black;
-  height: 300px;
+  height: 350px;
   width: 33.33%;
 }
 
@@ -71,13 +69,6 @@
 .divGrid p {
     width: 20ch;
     margin-bottom: 8px;
-}
-
-.divTeste {
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-    
 }
 
 

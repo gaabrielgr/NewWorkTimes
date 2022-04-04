@@ -82,11 +82,14 @@ export default function Health() {
                         setInfoDetails(sub);
                       }}
                     >
+                      <div>
+
                       {sub.multimedia !== null ? (
                         <img src={sub.multimedia[2].url} />
-                      ) : (
-                        ""
-                      )}
+                        ) : (
+                          ""
+                          )}
+                          </div>
                     </Link>
                     <p> {sub.byline} </p>
                     <p> {formatDate(sub.published_date)} </p>

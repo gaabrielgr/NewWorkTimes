@@ -19,11 +19,13 @@ const Technology = () => {
   function formatDate(date) {
     return moment(date).format("MMMM D, YYYY");
   }
-  
+
   const newArr = dados.filter((e) => e.title !== "");
   const subSections = newArr.slice(1, 4);
   const noticiaPrincipal = newArr[0];
-  const news = dados.slice(5);
+  const news = dados.slice(5, 13);
+
+  const newsBoth = dados.slice(13)
 
   return (
     <div>
@@ -115,6 +117,51 @@ const Technology = () => {
               </Link>
               <p>{item.byline}</p>
               <p> {formatDate(item.published_date)} </p>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section>
+        <div className={styles.head}>
+          <div>
+            <span className={styles.teste}>
+              Latest
+            </span>
+          </div>
+        </div>
+        <div className={styles.newBoth}>
+          {newsBoth.map(item => (
+            <div className={styles.newsFlex} key={item.uri.split('/')[3]}>
+              <div className={styles.divChild}>
+                <Link
+                  to={`/details/${item.uri.split("/")[3]}`}
+                  onClick={() => {
+                    navigate("/details");
+                    setInfoDetails(item);
+                  }}
+                >
+                  <h1>
+                    {item.title}
+                  </h1>
+                </Link>
+                <div>
+                  <span> {item.byline} </span>
+                </div>
+                <div>
+                  <p> {formatDate(item.published_Date)} </p>
+                </div>
+              </div>
+              <div>
+                <Link
+                  to={`/details/${item.uri.split("/")[3]}`}
+                  onClick={() => {
+                    navigate("/details");
+                    setInfoDetails(item);
+                  }}
+                >
+                  {item.multimedia != null ? <img src={item.multimedia[1].url} width={'220px'} /> : <img src={errorImg} width={'220px'} height={'146px'}></img>}
+                </Link>
+              </div>
             </div>
           ))}
         </div>
