@@ -23,6 +23,7 @@ const Technology = () => {
   const news = dados.slice(5, 13);
 
   const newsBoth = dados.slice(13);
+  
 
   return (
     <div>
