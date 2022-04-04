@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ContextApi } from "../context/ContextApi";
-import styles from "./Health.module.css";
+import styles from "./Pages.module.css";
 import errorImg from "../imgs/errorImg.png";
 import stylesSub from "../components/itemSub/ItemSub.module.css";
 import ItemSub from "../components/itemSub/ItemSub";
@@ -9,17 +9,14 @@ import moment from "moment";
 
 const Technology = () => {
   const navigate = useNavigate();
-  const { getApi, dados, setInfoDetails } = useContext(ContextApi);
+  const { getApi, dados, setInfoDetails, formatDate } = useContext(ContextApi);
 
   useEffect(() => {
     getApi("technology");
     console.log(dados);
   }, []);
 
-  function formatDate(date) {
-    return moment(date).format("MMMM D, YYYY");
-  }
-
+ 
   const newArr = dados.filter((e) => e.title !== "");
   const subSections = newArr.slice(1, 4);
   const noticiaPrincipal = newArr[0];

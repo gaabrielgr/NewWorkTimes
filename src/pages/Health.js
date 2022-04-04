@@ -2,14 +2,14 @@ import React, { useContext, useEffect } from "react";
 import { ContextApi } from "../context/ContextApi";
 import { Link, useNavigate } from "react-router-dom";
 import Loading from "../components/loading/Loading";
-import styles from "./Health.module.css";
+import styles from "./Pages.module.css";
 import moment from "moment";
 import ItemSub from "../components/itemSub/ItemSub";
 import stylesSub from "../components/itemSub/ItemSub.module.css";
 
 export default function Health() {
   const navigate = useNavigate();
-  const { getApi, dados, setInfoDetails, loading } = useContext(ContextApi);
+  const { getApi, dados, setInfoDetails, loading, formatDate } = useContext(ContextApi);
   useEffect(() => {
     getApi("health");
   }, []);
@@ -20,12 +20,6 @@ export default function Health() {
   const news = dados.slice(5, 13);
 
   const newsBoth = dados.slice(13);
-
-  // const
-
-  function formatDate(date) {
-    return moment(date).format("MMMM D, YYYY");
-  }
 
   if (loading) {
     return <Loading />;

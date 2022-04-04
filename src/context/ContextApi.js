@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import api from "../api";
 import Loading from "../components/loading/Loading";
 import Error from "../components/error/Error";
+import moment from "moment";
 
 export const ContextApi = createContext();
 
@@ -34,6 +35,11 @@ function ContextApiProvider({ children }) {
     }
   };
 
+  function formatDate(date) {
+    return moment(date).format("MMMM D, YYYY");
+  }
+
+
   if(error) {
     return ( <Error /> )
   }
@@ -48,6 +54,7 @@ function ContextApiProvider({ children }) {
         loading,
         setDados,
         setLoading,
+        formatDate
       }}
     >
       {children}

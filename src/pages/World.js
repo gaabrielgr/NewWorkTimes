@@ -3,15 +3,14 @@ import { Link, useNavigate } from "react-router-dom";
 import { ContextApi } from "../context/ContextApi";
 import Loading from "../components/loading/Loading";
 import errorImg from "../imgs/errorImg.png";
-import styles from "./Health.module.css";
+import styles from "./Pages.module.css";
 import stylesSub from "../components/itemSub/ItemSub.module.css";
 
-import moment from "moment";
 import ItemSub from "../components/itemSub/ItemSub";
 
 export default function World() {
   const navigate = useNavigate();
-  const { getApi, dados, setInfoDetails, loading } = useContext(ContextApi);
+  const { getApi, dados, setInfoDetails, loading, formatDate } = useContext(ContextApi);
 
   useEffect(() => {
     getApi("world");
@@ -24,10 +23,6 @@ export default function World() {
   const news = dados.slice(5, 13);
 
   const newsBoth = dados.slice(13);
-
-  function formatDate(date) {
-    return moment(date).format("MMMM D, YYYY");
-  }
 
   if (loading) {
     return <Loading />;

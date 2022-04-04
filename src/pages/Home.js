@@ -3,6 +3,7 @@ import { ContextApi } from "../context/ContextApi";
 import Loading from "../components/loading/Loading";
 import style from "../components/StyleSections.module.css";
 import Carousel from "../components/Carousel";
+
 const Home = () => {
   const { getApi, dados, loading } = useContext(ContextApi);
   useEffect(() => {

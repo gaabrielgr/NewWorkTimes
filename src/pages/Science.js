@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ContextApi } from "../context/ContextApi";
-import styles from "./Health.module.css";
+import styles from "./Pages.module.css";
 import errorImg from "../imgs/errorImg.png";
 import moment from "moment";
 import ItemSub from "../components/itemSub/ItemSub";
@@ -9,7 +9,7 @@ import stylesSub from "../components/itemSub/ItemSub.module.css";
 
 const Science = () => {
   const navigate = useNavigate();
-  const { getApi, dados, setInfoDetails } = useContext(ContextApi);
+  const { getApi, dados, setInfoDetails,formatDate } = useContext(ContextApi);
 
   useEffect(() => {
     getApi("science");
@@ -21,10 +21,6 @@ const Science = () => {
   const news = dados.slice(5, 13);
 
   const newsBoth = dados.slice(13);
-
-  function formatDate(date) {
-    return moment(date).format("MMMM D, YYYY");
-  }
 
   return (
     <div>

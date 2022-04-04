@@ -1,26 +1,10 @@
-import React, { useContext, useEffect,useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { ContextApi } from "../context/ContextApi";
 import styles from './Details.module.css'
-import moment from 'moment';
-import { useNavigate } from "react-router-dom";
 
 export default function Details() {
-  const { infoDetails } = useContext(ContextApi);
-  const [data,setData] = useState({})
-  const navigate = useNavigate()
+  const { infoDetails, formatDate } = useContext(ContextApi);
   console.log(infoDetails);
-
-  function formatDate(date) {
-    return moment(date).format("MMMM D, YYYY");
-  }
-
-  useEffect(() => {
-    setData(infoDetails)
-    console.log(infoDetails.multimedia);
-    if(infoDetails.multimedia === null) {
-      navigate('./')
-    }
-  },[])
 
   return (
     <div className={styles.details}>
@@ -29,19 +13,19 @@ export default function Details() {
         <p> {infoDetails.abstract} </p>
       </div>
       <div>
-      {infoDetails.multimedia !== null ? (
-              <img src={infoDetails.multimedia[1].url} />
-            ) : (
-              "Sem conteudo"
-            )}
+        {infoDetails.multimedia !== null ? (
+          <img src={infoDetails.multimedia[1].url} />
+        ) : (
+          "Sem conteudo"
+        )}
       </div>
       <div className={styles.actors}>
-      <h1> {infoDetails.byline} </h1>
-      <div className={styles.times}>
-        <p>published {formatDate(infoDetails.published_date)} Updated {formatDate(infoDetails.updated_date)}</p>
+        <h1> {infoDetails.byline} </h1>
+        <div className={styles.times}>
+          <p>published {formatDate(infoDetails.published_date)} Updated {formatDate(infoDetails.updated_date)}</p>
+        </div>
+
       </div>
-        
-      </div> 
     </div>
   );
 }

@@ -3,14 +3,14 @@ import { ContextApi } from "../context/ContextApi";
 import { Link, useNavigate } from "react-router-dom";
 import Loading from "../components/loading/Loading";
 import errorImg from "../imgs/errorImg.png";
-import styles from "./Health.module.css";
+import styles from "./Pages.module.css";
 import moment from "moment";
 import ItemSub from "../components/itemSub/ItemSub";
 import stylesSub from "../components/itemSub/ItemSub.module.css";
 
 export default function Politics() {
   const navigate = useNavigate();
-  const { getApi, dados, setInfoDetails, loading } = useContext(ContextApi);
+  const { getApi, dados, setInfoDetails, loading,formatDate } = useContext(ContextApi);
 
   useEffect(() => {
     getApi("politics");
@@ -20,9 +20,6 @@ export default function Politics() {
     return <Loading />;
   }
 
-  function formatDate(date) {
-    return moment(date).format("MMMM D, YYYY");
-  }
   const newArr = dados.filter((e) => e.title !== "");
   const subSections = newArr.slice(1, 4);
   const noticiaPrincipal = newArr[0];
