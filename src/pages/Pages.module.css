@@ -119,6 +119,7 @@
   margin: 0 auto;
 }
 
+
 .divChild {
   width: 350px;
   margin: 0 auto;
@@ -130,4 +131,8 @@
 
 .divChild h1:hover {
   text-decoration: underline;
+}
+
+.newsFlex:last-child {
+  border-bottom: 0px solid;
 }
