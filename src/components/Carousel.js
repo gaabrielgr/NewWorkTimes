@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
 import { useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import moment from "moment";
 import styleCarousel from "./Carousel.module.css";
 import arrow from "../imgs/arrow.png";
 import { ContextApi } from "../context/ContextApi";
-import moment from "moment";
 const Carousel = ({ sections }) => {
   const { setInfoDetails } = useContext(ContextApi);
   const carousel = useRef(null);

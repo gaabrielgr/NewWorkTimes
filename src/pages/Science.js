@@ -3,13 +3,12 @@ import { Link, useNavigate } from "react-router-dom";
 import { ContextApi } from "../context/ContextApi";
 import styles from "./Pages.module.css";
 import errorImg from "../imgs/errorImg.png";
-import moment from "moment";
 import ItemSub from "../components/itemSub/ItemSub";
 import stylesSub from "../components/itemSub/ItemSub.module.css";
 
 const Science = () => {
   const navigate = useNavigate();
-  const { getApi, dados, setInfoDetails,formatDate } = useContext(ContextApi);
+  const { getApi, dados, setInfoDetails, formatDate } = useContext(ContextApi);
 
   useEffect(() => {
     getApi("science");

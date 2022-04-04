@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import styleHeader from "./Header.module.css";
 
 const MenuItem = () => {
   return (

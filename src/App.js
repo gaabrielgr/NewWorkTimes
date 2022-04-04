@@ -1,14 +1,7 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Home from "./pages/Home";
 import ContextApiProvider from "./context/ContextApi";
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-  useNavigate,
-  Link,
-  useLocation,
-} from "react-router-dom";
 import Header from "./components/header/Header";
 import Details from "./pages/Details";
 import Technology from "./pages/Technology";

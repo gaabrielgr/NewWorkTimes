@@ -5,7 +5,6 @@ import styles from "./Pages.module.css";
 import errorImg from "../imgs/errorImg.png";
 import stylesSub from "../components/itemSub/ItemSub.module.css";
 import ItemSub from "../components/itemSub/ItemSub";
-import moment from "moment";
 
 const Technology = () => {
   const navigate = useNavigate();
@@ -16,7 +15,6 @@ const Technology = () => {
     console.log(dados);
   }, []);
 
- 
   const newArr = dados.filter((e) => e.title !== "");
   const subSections = newArr.slice(1, 4);
   const noticiaPrincipal = newArr[0];

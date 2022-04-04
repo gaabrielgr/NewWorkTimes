@@ -1,6 +1,6 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { ContextApi } from "../context/ContextApi";
-import styles from './Details.module.css'
+import styles from "./Details.module.css";
 
 export default function Details() {
   const { infoDetails, formatDate } = useContext(ContextApi);
@@ -22,9 +22,11 @@ export default function Details() {
       <div className={styles.actors}>
         <h1> {infoDetails.byline} </h1>
         <div className={styles.times}>
-          <p>published {formatDate(infoDetails.published_date)} Updated {formatDate(infoDetails.updated_date)}</p>
+          <p>
+            published {formatDate(infoDetails.published_date)} Updated{" "}
+            {formatDate(infoDetails.updated_date)}
+          </p>
         </div>
-
       </div>
     </div>
   );

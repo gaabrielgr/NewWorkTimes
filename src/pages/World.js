@@ -5,12 +5,12 @@ import Loading from "../components/loading/Loading";
 import errorImg from "../imgs/errorImg.png";
 import styles from "./Pages.module.css";
 import stylesSub from "../components/itemSub/ItemSub.module.css";
-
 import ItemSub from "../components/itemSub/ItemSub";
 
 export default function World() {
   const navigate = useNavigate();
-  const { getApi, dados, setInfoDetails, loading, formatDate } = useContext(ContextApi);
+  const { getApi, dados, setInfoDetails, loading, formatDate } =
+    useContext(ContextApi);
 
   useEffect(() => {
     getApi("world");
