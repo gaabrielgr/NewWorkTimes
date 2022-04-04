@@ -74,7 +74,7 @@ export default function Health() {
               >
                 <div className={styles.subSectionInfo}>
                   <h1>{sub.title}</h1>
-                  <div className={styles.divTeste}>
+                  <div className={styles.contarImgPessoal}>
                     <Link
                       to={`/details/${sub.uri.split("/")[3]}`}
                       onClick={() => {
@@ -82,13 +82,11 @@ export default function Health() {
                         setInfoDetails(sub);
                       }}
                     >
-                      <div>
-                        {sub.multimedia !== null ? (
-                          <img width={"250px"} src={sub.multimedia[2].url} />
-                        ) : (
-                          ""
-                        )}
-                      </div>
+                      {sub.multimedia !== null ? (
+                        <img width={"250px"} src={sub.multimedia[2].url} />
+                      ) : (
+                        ""
+                      )}
                     </Link>
                     <p> {sub.byline} </p>
                     <p> {formatDate(sub.published_date)} </p>

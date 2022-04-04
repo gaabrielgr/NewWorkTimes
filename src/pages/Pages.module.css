@@ -27,6 +27,9 @@
   align-items: center;
   padding: 20px 0px;
   flex-wrap: wrap;
+  justify-content: center;
+  border-bottom: 1px solid black;
+  margin-bottom: 20px;
 }
 
 .subSection {
@@ -41,7 +44,6 @@
 
 .subSectionLargura {
   border-right: 1px solid black;
-  border-bottom: 1px solid black;
   height: 370px;
   width: 33.33%;
   display: flex;
@@ -55,12 +57,14 @@
   height: 100%;
   width: 100%;
 }
-.divTeste {
+.contarImgPessoal {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-
+.contarImgPessoal a {
+  width: 398px;
+}
 .subSectionLargura:last-child {
   border-right: 0px;
 }
@@ -118,7 +122,6 @@
   max-width: 850px;
   margin: 0 auto;
 }
-
 
 .divChild {
   width: 350px;
