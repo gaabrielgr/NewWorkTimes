@@ -79,7 +79,7 @@ const Technology = () => {
                       }}
                     >
                       {sub.multimedia !== null ? (
-                        <img src={sub.multimedia[2].url} />
+                        <img width={"200px"} src={sub.multimedia[2].url} />
                       ) : (
                         ""
                       )}
